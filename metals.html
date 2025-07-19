@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metals We Handle | Ansam Metals Corporation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#" class="active-link">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button desktop-cta">Request a Pickup</a>
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                <i class="ti ti-menu-2" x-show="!mobileMenuOpen"></i>
+                <i class="ti ti-x" x-show="mobileMenuOpen"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            </div>
+    </header>
+
+    <main>
+        <section class="metals-hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>An Extensive Non-Ferrous Portfolio</h1>
+                <p>Explore the wide range of high-quality metals we trade and process.</p>
+            </div>
+        </section>
+
+        <section class="metals-page-section" x-data="metalsPageData()" x-cloak>
+            <div class="container">
+                <div class="filter-bar" data-aos="fade-up">
+                    <button @click="activeFilter = 'all'" :class="{ 'active': activeFilter === 'all' }">All Metals</button>
+                    <button @click="activeFilter = 'base'" :class="{ 'active': activeFilter === 'base' }">Base Metals</button>
+                    <button @click="activeFilter = 'alloy'" :class="{ 'active': activeFilter === 'alloy' }">Alloys</button>
+                </div>
+
+                <div class="metals-grid">
+                    <template x-for="metal in filteredMetals" :key="metal.id">
+                        <div class="metal-card" 
+                             @click="selectedMetal = metal; isModalOpen = true" 
+                             data-aos="fade-up" 
+                             data-aos-delay="100">
+                            <i :class="metal.icon"></i>
+                            <div class="metal-card-info">
+                                <h3 x-text="metal.name"></h3>
+                                <span class="metal-symbol" x-text="metal.symbol"></span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="modal-wrapper" x-show="isModalOpen" x-transition.opacity>
+                <div class="modal-overlay" @click="isModalOpen = false"></div>
+                <div class="modal-content" x-show="isModalOpen" x-transition.scale>
+                    <button class="modal-close" @click="isModalOpen = false"><i class="ti ti-x"></i></button>
+                    
+                    <img :src="selectedMetal.image" :alt="selectedMetal.name" class="modal-image">
+                    
+                    <h2 class="modal-title" x-text="selectedMetal.name"></h2>
+                    <p class="modal-description" x-text="selectedMetal.description"></p>
+                    
+                    <table class="specs-table">
+                        <tbody>
+                            <template x-for="spec in selectedMetal.specs" :key="spec.label">
+                                <tr>
+                                    <td x-text="spec.label"></td>
+                                    <td x-text="spec.value"></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

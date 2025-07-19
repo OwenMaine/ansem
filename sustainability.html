@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability | Ansam Metals Corporation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="#" class="active-link">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button desktop-cta">Request a Pickup</a>
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                </button>
+        </div>
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            </div>
+    </header>
+
+    <main>
+        <section class="sustainability-hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>Responsible Metals. Sustainable Future.</h1>
+                <p>Our commitment to the planet is as strong as the metals we process.</p>
+            </div>
+        </section>
+
+        <section class="core-message-section">
+            <div class="container" data-aos="fade-up">
+                <div class="core-message-grid">
+                    <div class="core-message-text">
+                        <h2>A Circular Commitment</h2>
+                        <p>At Ansam Metals, sustainability is not an afterthought—it's the core of our business model. Metal recycling is inherently green, consuming up to 95% less energy than producing metals from virgin ore. This process significantly reduces greenhouse gas emissions, conserves natural resources, and minimizes landfill waste.</p>
+                        <p>We are dedicated to maximizing resource efficiency and promoting a circular economy where materials are continuously reused, creating a closed-loop system for industrial metals.</p>
+                    </div>
+                    <div class="core-message-image">
+                        <img src="images/18.jpg" alt="Green leaves and industrial gear, symbolizing eco-friendly industry">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recycling-journey-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">The Recycling Journey</h2>
+                <div class="svg-container" data-aos="fade-up">
+                    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+                        <path id="recyclingPath-bg" d="M 50 200 C 50 100, 350 100, 400 200 S 750 300, 750 200" stroke-width="3" stroke-linecap="round" />
+                        <path id="recyclingPath" d="M 50 200 C 50 100, 350 100, 400 200 S 750 300, 750 200" stroke-width="4" stroke-linecap="round" />
+                    </svg>
+                    <div class="journey-label" style="top: 50%; left: 4%;"><span>1</span> Collection</div>
+                    <div class="journey-label" style="top: 20%; left: 25%;"><span>2</span> Sorting</div>
+                    <div class="journey-label" style="top: 50%; left: 50%; transform: translateX(-50%);"><span>3</span> Processing</div>
+                    <div class="journey-label" style="top: 70%; left: 75%;"><span>4</span> Distribution</div>
+                    <div class="journey-label" style="top: 50%; left: 96%; transform: translateX(-100%);"><span>5</span> New Products</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Partnerships & Certifications</h2>
+                <div class="logo-grid" data-aos="fade-up">
+                    <img src="images/19.jpg" alt="ISRI Logo">
+                    <img src="images/20.jpg" alt="LEED Partner Logo">
+                    <img src="images/21.jpg" alt="EPA Compliant Logo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

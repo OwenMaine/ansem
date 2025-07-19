@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Ansam Metals Corporation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="#" class="active-link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-button desktop-cta">Request a Pickup</a>
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                </button>
+        </div>
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>Get In Touch</h1>
+                <p>We're here to help with all your non-ferrous metal needs.</p>
+            </div>
+        </section>
+
+        <section class="contact-page-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-details" data-aos="fade-right">
+                        <h2>Contact Information</h2>
+                        <div class="detail-item">
+                            <i class="ti ti-map-pin"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <p>1026 E Patapsco Ave, Baltimore, MD 21225</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="ti ti-mail"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:management@anmetalscop.com">management@anmetalscop.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <h2 class="location-title">Our Location</h2>
+                        <div class="map-container">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3090.643911252085!2d-76.59124968463999!3d39.22728497952101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c8030800a74759%3A0x6ab247a3299a9a35!2s1026%20E%20Patapsco%20Ave%2C%20Brooklyn%2C%20MD%2021225%2C%20USA!5e0!3m2!1sen!2sng!4v1658255888888!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="150">
+                        <form x-data="contactForm()" @submit.prevent="submitForm">
+                            <div class="success-message" x-show="success" x-transition.opacity>
+                                <div class="success-icon">
+                                    <div class="success-checkmark"></div>
+                                </div>
+                                <h3>Message Sent!</h3>
+                                <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                            </div>
+                            
+                            <div class="form-fields" x-show="!success" x-transition>
+                                <h2>Send us a Message</h2>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inquiry">Inquiry Type</label>
+                                    <select id="inquiry" required>
+                                        <option value="">-- Please select --</option>
+                                        <option value="purchasing">Metal Purchasing</option>
+                                        <option value="sales">Bulk Sales</option>
+                                        <option value="logistics">Logistics & Pickup</option>
+                                        <option value="general">General Inquiry</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="cta-button form-submit-btn" :disabled="submitting">
+                                    <span x-text="submitting ? 'Sending...' : 'Send Message'"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+       </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ansam Metals Corporation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html" class="active-link">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="cta-button desktop-cta">Request a Pickup</a>
+            
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                <i class="ti ti-menu-2" x-show="!mobileMenuOpen"></i>
+                <i class="ti ti-x" x-show="mobileMenuOpen"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>Forged in Baltimore</h1>
+                <p>A legacy of integrity and innovation in the heart of America's industrial landscape.</p>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-text" data-aos="fade-right">
+                        <h2>Our Story, Forged Over Decades</h2>
+                        <p>Founded in 1994, Ansam Metals Corporation began with a simple mission: to provide honest, reliable, and efficient metal recycling services to the Baltimore community. We started with a small yard and a dedicated team, built on the principles of hard work and fair dealing.</p>
+                        <p>Our roots in Baltimore are deep. We've grown alongside this resilient city, evolving our processes and expanding our reach while remaining committed to the local economy and environment. Today, we are a leading processor of non-ferrous metals, serving clients across the nation and the world, but our heart remains right here, on Patapsco Avenue.</p>
+                    </div>
+                    <div class="story-image" data-aos="fade-left" data-aos-delay="150">
+                        <img src="images/4.jpg" alt="Ansam Metals processing facility">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <span class="timeline-year">1994</span>
+                            <h3>Company Founded</h3>
+                            <p>Ansam Metals opens its first yard in Baltimore, MD, focusing on local scrap collection.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2005</span>
+                            <h3>Major Facility Expansion</h3>
+                            <p>Expanded processing capabilities with the installation of our first industrial metal baler.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2012</span>
+                            <h3>Achieved ISO 9001 Certification</h3>
+                            <p>Formalized our commitment to quality management and customer satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <span class="timeline-year">2020</span>
+                            <h3>Launched Sustainability Initiative</h3>
+                            <p>Introduced new programs to track and reduce our carbon footprint, promoting a circular economy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Ansam Metals Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

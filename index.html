@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansam Metals Corporation | Reimagining Non-Ferrous Metals</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#" class="active-link">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="contact.html" class="cta-button desktop-cta">Request a Pickup</a>
+            
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                <i class="ti ti-menu-2" x-show="!mobileMenuOpen"></i>
+                <i class="ti ti-x" x-show="mobileMenuOpen"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="cta-button">Request a Pickup</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>Reimagining Non-Ferrous Metals</h1>
+                <p>Leading Baltimore in the procurement, processing, and distribution of high-quality industrial metals.</p>
+                <div class="hero-cta-group">
+                    <a href="contact.html" class="cta-button">Request a Pickup</a>
+                    <a href="services.html" class="cta-button-outline">Browse Metals</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-grid">
+                    <div class="intro-card" data-aos="fade-up" data-aos-delay="0">
+                        <i class="ti ti-shopping-cart-plus"></i>
+                        <h3>What We Buy</h3>
+                        <p>We purchase a wide range of non-ferrous scrap from industrial, commercial, and individual sellers at competitive prices.</p>
+                    </div>
+                    <div class="intro-card" data-aos="fade-up" data-aos-delay="150">
+                        <i class="ti ti-settings-cog"></i>
+                        <h3>What We Process</h3>
+                        <p>Our state-of-the-art facility sorts, bales, and processes materials to meet exacting specifications for global markets.</p>
+                    </div>
+                    <div class="intro-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="ti ti-truck-delivery"></i>
+                        <h3>What We Sell</h3>
+                        <p>We supply high-grade, furnace-ready metal products to foundries, mills, and manufacturers worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-overlay"></div>
+            <div class="container stats-content">
+                <div class="stats-grid">
+                    <div class="stat-item" data-aos="fade-up">
+                        <span class="stat-number">30+</span>
+                        <p class="stat-label">Years in Business</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="150">
+                        <span class="stat-number">1.2M+</span>
+                        <p class="stat-label">Tons Processed</p>
+                    </div>
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="stat-number">40+</span>
+                        <p class="stat-label">Alloys Handled</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="final-cta-section">
+            <div class="container" data-aos="fade-up">
+                <h2>Ready to Partner with Ansam?</h2>
+                <p>Whether you're selling scrap or sourcing processed metals, our team is ready to provide exceptional service and value.</p>
+                <a href="#" class="cta-button">Get a Quote Today</a>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="/" class="logo">ANSAM METALS</a>
+                <p>Your trusted partner in non-ferrous metal recycling and trading since 1994.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>1026 E Patapsco Ave,<br>Baltimore, MD 21225</p>
+                <a href="mailto:management@anmetalscop.com">management@anmetalscop.com</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+                    </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Ansam Metals Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

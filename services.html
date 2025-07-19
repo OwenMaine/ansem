@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Ansam Metals Corporation</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)" 
+            :class="{ 'scrolled': scrolled || mobileMenuOpen }">
+        <div class="container nav-container">
+            <a href="/" class="logo">ANSAM METALS</a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#" class="active-link">Services</a></li>
+                    <li><a href="metals.html">Metals</a></li>
+                    <li><a href="sustainability.html">Sustainability</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="cta-button desktop-cta">Request a Pickup</a>
+            
+            <button class="mobile-menu-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+                <i class="ti ti-menu-2" x-show="!mobileMenuOpen"></i>
+                <i class="ti ti-x" x-show="mobileMenuOpen"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-menu" x-show="mobileMenuOpen" x-transition>
+            </div>
+    </header>
+
+    <main>
+        <section class="services-hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content" data-aos="fade-up">
+                <h1>Comprehensive Metal Solutions</h1>
+                <p>From procurement to global distribution, we deliver value at every step.</p>
+            </div>
+        </section>
+
+        <section class="services-page-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Core Services</h2>
+                <div class="services-grid">
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="ti ti-scale"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Metal Purchasing</h3>
+                            <p>We offer competitive, transparent pricing for all grades of non-ferrous scrap metal. Our services include on-site evaluation, certified weight measurements, and prompt payment for industrial, commercial, and demolition clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="ti ti-cpu"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Processing & Sorting</h3>
+                            <p>Utilizing advanced sorting technology, including X-ray fluorescence (XRF) analyzers, we meticulously separate metals into clean, furnace-ready commodities. Our processes include shearing, baling, and shredding to meet precise customer specifications.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="ti ti-building-factory-2"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Bulk & Contract Sales</h3>
+                            <p>We are a trusted supplier to domestic and international foundries, mills, and manufacturers. We offer bulk quantities and long-term contracts for a reliable supply of high-quality copper, aluminum, brass, zinc, and other base metals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="ti ti-truck"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Logistics & Transport</h3>
+                            <p>Our in-house logistics team manages the seamless transportation of materials. We provide roll-off container services for scrap collection and coordinate all freight and shipping documentation for domestic and export sales, ensuring timely delivery.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Ansam Metals Corporation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
